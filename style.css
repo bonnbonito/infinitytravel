@@ -1,0 +1,340 @@
+/*
+Theme Name: bonnjoel
+Theme URI: http://bonnjoel.com/
+Author: Bonn Joel
+Author URI: http://bonnjoel.com/
+Description: Lightweight Wordpress Theme
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bonnjoel
+Tags:
+*/
+
+html, body {
+	height: 100%;
+   font-family: 'Raleway', sans-serif;  
+   color: #414042;   
+}
+
+html.mm-opened {
+	margin-top: 0 !important;
+}
+
+#hamburger {
+   border: 1px solid #999;
+   display: block;
+   width: 35px;
+   padding: 2px 5px;
+   position: absolute;
+   left: 10px;   
+   top: 20px;
+   transition: transform .4s ease;    
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+}
+
+.screen-reader-text:focus {
+   background-color: #f1f1f1;
+   border-radius: 3px;
+   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+   clip: auto !important;
+   color: #21759b;
+   display: block;
+   font-size: 14px;
+   font-size: 0.875rem;
+   font-weight: bold;
+   height: auto;
+   left: 5px;
+   line-height: normal;
+   padding: 15px 23px 14px;
+   text-decoration: none;
+   top: 5px;
+   width: auto;
+   z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+   outline: 0;
+}
+
+/*.mm-opened #hamburger {
+	-webkit-transform: translate3d(440px,0,0);
+    transform: translate3d(440px,0,0);
+}
+*/
+
+#hamburger span {
+   background: #999;
+   display: block;
+   height: 3px;
+   margin: 5px 0;
+}
+
+html.mm-opened #hamburger span.top-bar {
+   transform: rotate( 45deg );
+   top: 9px;
+}
+html.mm-opened #hamburger span.middle-bar {
+   opacity: 0;
+}
+html.mm-opened #hamburger span.bottom-bar {
+   transform: rotate( -45deg );
+   top: -7px;
+}
+
+#hamburger {
+   overflow: hidden;
+}
+#hamburger span {
+   position: relative;
+   transform: rotate( 0 );
+   top: 0;
+   left: 0;
+   opacity: 1;
+
+   transition: none 0.5s ease;
+   transition-property: transform, top, left, opacity;
+}
+
+html.mm-opened #hamburger span.middle-bar {
+   left: -40px;
+}
+
+.mm-menu.mm-theme-dark .mm-navbar.mm-navbar-bottom-1 a {
+	transition: .5s all ease;
+}
+
+.mm-menu.mm-theme-dark .mm-navbar.mm-navbar-bottom-1 a:hover {
+	background: #675B51;
+}
+
+.site-header {
+   background: #3e5b63;
+   position: absolute;
+   width: 100%;
+}
+
+.main-navigation {
+   display: none;
+}
+
+.main-navigation a {
+   color: #fff;
+   font-size: 12px;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
+.top-right .content {
+   font-size: 12px;
+   color: #fff;
+}
+
+.top-right.top-right .item .icon {
+   font-size: .6em;
+   background: #fff;
+   color: #3b5862;
+}
+
+.main-navigation a:hover {
+   color: #dcb0b4;
+}
+
+.main-navigation .secondary.menu {
+   justify-content: space-between;
+}
+
+.pb0.pb0.pb0.pb0.pb0 {
+   padding-bottom: 0;
+}
+
+.site-branding {
+   text-align: center;
+}
+
+.top-right {
+   text-align: center;
+}
+
+.top-right .ui.search .prompt {
+   border-radius: 0;
+}
+
+.top-mid.top-mid.divider {
+   margin-top: 10px;  
+}
+
+.top-right.top-right .item .search .icon {
+   background: transparent;
+   color: #fff;
+}
+
+.top-right .ui.input input {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.top-right .ui.input input:active, 
+.top-right .ui.input.down input {
+   background: transparent;
+   border: 1px solid #fff;
+   color: #fff;
+}
+
+.top-right.top-right .item .search.icon {
+   font-size: 1em;
+}
+
+.front-banner img {
+   width: 100%;
+}
+
+.mega-menu.ui.popup {
+   background: transparent;
+   border: 0;
+   box-shadow: none;
+}
+
+.mega-menu > .grid .m-item {
+   border-right: 1px solid #000;
+}
+
+.m-item h3 a {
+   background: #3c4249;
+   color: #fff;
+   font-size: 15px;
+   display: block;
+   font-weight: 500;
+}
+
+.mega-menu.mega-menu.mega-menu .m-item .list a {
+   color: #6d6e71;
+   font-size: 13px;
+   margin-bottom: 10px;
+}
+
+.site-footer {
+   background: #3e5b63;
+}
+
+.site-footer a {
+   color: #939598;
+}
+
+.footer-social-media  {
+   width: 100px;
+   margin: 2em auto 0;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.footer-social-media a {
+    width: 50%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.footer-partner {   
+   margin: 1.5em auto 0;
+   font-size: 13px;
+   text-align: center;
+   color: #e6e7e8;
+}
+
+.footer-partner .copyright {
+   font-size: 11px;
+}
+
+.front-search {
+   padding-top: 2.5em;
+   padding-bottom: 2.5em;
+   background: #4e5755;
+   margin-top: -7px;
+}
+
+.front-search label {
+   font-size: 20px;
+   color: #fff;
+   text-transform: uppercase;
+}
+
+.front-search .column {
+   max-width: 800px;
+}
+
+.front-search .ui.search {
+   max-width: 680px;
+   width: 100%;
+}
+
+.front-search.front-search.front-search.front-search.front-search input {
+   border-radius: 0;
+   height: 60px;
+   font-size: 22px;
+}
+
+.front-search .ui.form .inline.fields .field>label {
+   font-size: 20px;
+   color: #fff;
+   text-transform: uppercase;
+}
+
+.front-search .ui.form .inline.fields {
+   margin-bottom: 0;
+}
+
+.front-area {
+   padding-top: 2.5em;
+   padding-bottom: 2.5em;
+}
+
+.front-area .entry-title {
+   margin-bottom: 1.2em;
+   text-transform: uppercase;
+}
+
+.search.icon:hover {
+   cursor: pointer;
+}
+
+.s-submit {
+   position: absolute;
+   right: 0;
+   opacity: 0;
+}
+
+@media (min-width: 768px) {
+   
+}
+
+@media (min-width: 992px) {
+   .top-right {
+      text-align: right;
+   }
+   .top-mid.top-mid.divider {
+      margin-top: 55px;
+   }
+   .main-navigation {
+      display: block;
+   }
+   #hamburger {
+      display: none;
+   }
+   .site-branding {
+      text-align: left;
+   }  
+}

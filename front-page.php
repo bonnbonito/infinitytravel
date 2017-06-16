@@ -23,7 +23,7 @@ get_header(); ?>
 					<a class="item" href="#">Tanzania</a>
 					<a class="item" href="#">Zambia</a>
 					<a class="item" href="#">Zanibar</a>
-				</div>					
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">ARABIAN GULF</a></h3>
@@ -32,36 +32,36 @@ get_header(); ?>
 					<a class="item" href="#">Bahrain</a>
 					<a class="item" href="#">Dubai</a>
 					<a class="item" href="#">Oman</a>
-					<a class="item" href="#">Ras Al Khaimah</a>					
-				</div>					
+					<a class="item" href="#">Ras Al Khaimah</a>
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">ASIA</a></h3>
 				<div class="ui link list">
-					<a class="item" href="#">Bhutan</a>	
-					<a class="item" href="#">Borneo</a>	
-					<a class="item" href="#">Burma(Myanmmar)</a>	
-					<a class="item" href="#">Cambodia</a>	
-					<a class="item" href="#">China</a>	
-					<a class="item" href="#">Hong Kong</a>	
-					<a class="item" href="#">India</a>	
-					<a class="item" href="#">Indonesia</a>	
-					<a class="item" href="#">Laos</a>	
-					<a class="item" href="#">Malaysia</a>	
-					<a class="item" href="#">Philippines</a>	
-					<a class="item" href="#">Singapore</a>	
-					<a class="item" href="#">Sri Lanka</a>	
-					<a class="item" href="#">Thailand</a>	
-					<a class="item" href="#">Vietnam</a>			
-				</div>					
+					<a class="item" href="#">Bhutan</a>
+					<a class="item" href="#">Borneo</a>
+					<a class="item" href="#">Burma(Myanmmar)</a>
+					<a class="item" href="#">Cambodia</a>
+					<a class="item" href="#">China</a>
+					<a class="item" href="#">Hong Kong</a>
+					<a class="item" href="#">India</a>
+					<a class="item" href="#">Indonesia</a>
+					<a class="item" href="#">Laos</a>
+					<a class="item" href="#">Malaysia</a>
+					<a class="item" href="#">Philippines</a>
+					<a class="item" href="#">Singapore</a>
+					<a class="item" href="#">Sri Lanka</a>
+					<a class="item" href="#">Thailand</a>
+					<a class="item" href="#">Vietnam</a>
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">AUSTRALIA</a></h3>
 				<div class="ui link list">
-					<a class="item" href="#">Australia</a>	
-					<a class="item" href="#">French Polynesia</a>	
-					<a class="item" href="#">New Zealand</a>						
-				</div>					
+					<a class="item" href="#">Australia</a>
+					<a class="item" href="#">French Polynesia</a>
+					<a class="item" href="#">New Zealand</a>
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">AUSTRALIA</a></h3>
@@ -82,8 +82,8 @@ get_header(); ?>
 					<a class="item" href="#">The Bahamas</a>
 					<a class="item" href="#">The British </a>
 					<a class="item" href="#">Virgin Islands</a>
-					<a class="item" href="#">Trks & Caicos</a>								
-				</div>					
+					<a class="item" href="#">Trks & Caicos</a>
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">EUROPE</a></h3>
@@ -102,28 +102,28 @@ get_header(); ?>
 					<a class="item" href="#">Portugal</a>
 					<a class="item" href="#">Spain</a>
 					<a class="item" href="#">Switzerland</a>
-					<a class="item" href="#">United Kingdom</a>			
-				</div>					
+					<a class="item" href="#">United Kingdom</a>
+				</div>
 			</div>
 			<div class="column m-item">
 				<h3><a href="#">NORTH AMERICA</a></h3>
 				<div class="ui link list">
 					<a class="item" href="#">Canada</a>
 					<a class="item" href="#">Mexico</a>
-					<a class="item" href="#">United States of America</a>						
-				</div>	
+					<a class="item" href="#">United States of America</a>
+				</div>
 				<h3><a href="#">SOUTH AMERICA</a></h3>
 				<div class="ui link list">
 					<a class="item" href="#">Argentina</a>
 					<a class="item" href="#">Brazil</a>
 					<a class="item" href="#">Chile</a>
 					<a class="item" href="#">Ecuador</a>
-					<a class="item" href="#">Peru</a>											
+					<a class="item" href="#">Peru</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="front-banner">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
 	</div>
@@ -143,7 +143,7 @@ get_header(); ?>
 								</div>
 								<div class="results"></div>
 							</div>
-						</div>						
+						</div>
 					</div>
 				</form>
 			</div>
@@ -158,7 +158,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );				
+				get_template_part( 'template-parts/content', 'page' );
 
 			endwhile; // End of the loop.
 			?>
@@ -167,6 +167,75 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+	<div class="destination-row">
+		<div class="ui two column grid padded stackable">
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
+					<div class="span-wrap">
+						<span>Destination of the Month</span>
+					</div>
+				</a>
+			</div>
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
+					<div class="span-wrap">
+						<span>Resort of the Month</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="ui three column grid padded stackable">
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/when.jpg" alt="">
+					<div class="span-wrap">
+						<span>Destination of the Month</span>
+					</div>
+				</a>
+			</div>
+			<div class="column mid-logo" style="background-color: #434d4b;">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mid-logo.png" alt="">
+					<p>Why book with<br>Infinity&Beyond Travel?</p>
+				</a>
+			</div>
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/inspire.jpg" alt="">
+					<div class="span-wrap">
+						<span>Destination of the Month</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="ui two column grid padded stackable">
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
+					<div class="span-wrap">
+						<span>Destination of the Month</span>
+					</div>
+				</a>
+			</div>
+			<div class="column">
+				<a href="#">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
+					<div class="span-wrap">
+						<span>Resort of the Month</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="newsletter-row">
+		<div class="ui container">
+
+		</div>
+	</div>
 
 <?php
 get_footer();

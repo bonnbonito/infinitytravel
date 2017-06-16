@@ -30,6 +30,9 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="<?php bloginfo( 'name' ); ?> Logo">
 					</a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="fixed-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/fixed-logo.png" alt="<?php bloginfo( 'name' ); ?> Logo">
+					</a>
 				</div><!-- .site-branding -->
 				<a id="hamburger" href="#" class="menu-toggle" >
 					<span class="top-bar"></span>
@@ -43,25 +46,25 @@
 					<div class="ui horizontal list">
 						<div class="item">
 							<i class="circular phone icon" aria-hidden="true"></i>
-							<div class="content">								
-								01244 355347 
+							<div class="content">
+								01244 355347
 							</div>
 						</div>
 						<div class="item">
 							<i class="circular envelope icon" aria-hidden="true"></i>
-							<div class="content">								
+							<div class="content">
 								sales@iabtravel.com
 							</div>
 						</div>
 						<div class="item">
 							<i class="circular info icon" aria-hidden="true"></i>
-							<div class="content">								
-								Let us call you back  
+							<div class="content">
+								Let us call you back
 							</div>
 						</div>
 						<div class="item">
 							<i class="circular clock icon" aria-hidden="true"></i>
-							<div class="content">								
+							<div class="content">
 								Mon–Fri, 09.:00 - 18.:00
 							</div>
 						</div>
@@ -73,23 +76,25 @@
 								</form>
 								<div class="results"></div>
 							</div>
-						</div>				
+						</div>
 					</div>
 				</div>
 				<div class="top-mid ui hidden divider"></div>
 				<nav id="site-navigation" class="main-navigation bottom aligned" role="navigation">
-					
-					<?php wp_nav_menu( array( 
-						'theme_location' => 'primary', 
-						'menu_id' => 'primary-menu', 
-						'container' => false, 
+
+					<?php wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id' => 'primary-menu',
+						'container' => false,
 						'walker' => new Walker_Nav_Primary,
-						'items_wrap' => '<div id="%1$s" class="ui secondary %2$s">%3$s</div>' 
+						'items_wrap' => '<div id="%1$s" class="ui secondary %2$s">%3$s</div>'
 					) ); ?>
 				</nav><!-- #site-navigation -->
 				</div>
 			</div>
-		</div>		
+		</div>
 	</header><!-- #masthead -->
+
+	<?php get_template_part('template-parts/header', 'megamenu'); ?>
 
 	<div id="content" class="site-content">

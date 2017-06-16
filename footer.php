@@ -13,6 +13,8 @@
 
 	</div><!-- #content -->
 
+	<?php get_template_part('template-parts/content', 'newsletter'); ?>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="ui four column stackable grid padded">
 			<div class="column">
@@ -38,7 +40,7 @@
 					<a href="#"><i class="facebook f icon"></i></a>
 					<a href="#"><i class="twitter icon"></i></a>
 					<a href="#"><i class="instagram icon"></i></a>
-					<a href="#"><i class="google plus icon"></i></a>				
+					<a href="#"><i class="google plus icon"></i></a>
 				</div><!-- .site-info -->
 			</div>
 			<div class="column">
@@ -52,7 +54,7 @@
 					<p class="copyright">© 2016 INFINITY & BEYOND TRAVEL. ALL RIGHTS RESERVED.</p>
 				</div>
 			</div>
-		</div>		
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
@@ -70,20 +72,20 @@
 			"extensions": [
 			"pagedim-black",
 			"theme-dark"
-			],		
+			],
 			"navbar": {
 				"add": true
 			},
-			"navbars": [		
+			"navbars": [
 			{
 				"position": "top"
-				
+
 			},
 			{
 				"position": "bottom",
-				"content": [				
+				"content": [
 				"<a class='fa fa-facebook' href='#/' title='Follow Our Facebook'></a>",
-				"<a class='fa fa-twitter' href='#/' title='Follow Our Twitter'></a>",			
+				"<a class='fa fa-twitter' href='#/' title='Follow Our Twitter'></a>",
 				"<a class='fa fa-instagram' href='#/' title='Follow Our Instagram'></a>"
 				]
 			}
@@ -100,7 +102,7 @@
 				cursorborder : "1px solid #000",
 				cursoropacitymax : .7,
 				cursorminheight: 5
-			});	
+			});
 		});
 	});
 </script>

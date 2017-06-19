@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying front.
- *
+ * The template for displaying Our Holiday page.
+ * Template Name: Our Holidays
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package BonnJoel

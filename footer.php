@@ -26,13 +26,13 @@
 			</div>
 			<div class="column">
 				<div class="footer-menu">
-					<ul>
-						<li><a href="#">Booking Conditions</a></li>
-						<li><a href="#">Luxury Travel</a></li>
-						<li><a href="#">SitemaP</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="#">FAQS</a></li>
-					</ul>
+					<div class="ui link list">
+						<a class="item" href="#">Booking Conditions</a>
+						<a class="item" href="#">Luxury Travel</a>
+						<a class="item" href="#">SitemaP</a>
+						<a class="item" href="#">Careers</a>
+						<a class="item" href="#">FAQS</a>
+					</div>
 				</div><!-- .site-info -->
 			</div>
 			<div class="column">

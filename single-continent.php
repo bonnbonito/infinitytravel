@@ -12,6 +12,9 @@ get_header(); ?>
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
 	</div>
+
+	<?php get_template_part( 'template-parts/row', 'search' ); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

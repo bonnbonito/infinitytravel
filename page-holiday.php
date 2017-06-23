@@ -14,6 +14,8 @@ get_header(); ?>
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
 	</div>
 
+	<?php get_template_part( 'template-parts/row', 'search' ); ?>
+
 	<div class="row-search">
 		<div class="ui middle aligned center aligned grid">
 			<div class="column">

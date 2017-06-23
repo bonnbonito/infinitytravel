@@ -12,10 +12,33 @@ get_header(); ?>
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
 	</div>
+
+	<?php get_template_part( 'template-parts/row', 'search' ); ?>
+	<div class="breadcrumb-row">
+		<div class="ui container">
+			<div class="ui large secondary menu">
+        <div class="item">
+					<div class="ui large breadcrumb">
+					  <a class="section" href="<?php bloginfo('url'); ?>">Home</a>
+					  <i class="right chevron icon divider"></i>
+					  <a class="section" href="#">Our Destination</a>
+						<i class="right chevron icon divider"></i>
+						<?php breadcrumbs_fx('continent'); ?>
+					  <i class="right chevron icon divider"></i>
+					  <div class="section"><?php the_title(); ?></div>
+					</div>
+        </div>
+        <div class="right item">
+          <a class="ui button"><i class="phone icon"></i> CALL BACK</a>
+        </div>
+      </div>
+		</div>
+	</div>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="ui container center aligned">
+			<div class="ui container">
 
 				<?php
 				while ( have_posts() ) : the_post(); ?>
@@ -24,13 +47,40 @@ get_header(); ?>
           <header class="entry-header">
             <?php the_title( '<h1 class="ui horizontal divider header entry-title">', '</h1>' ); ?>
           </header><!-- .entry-header -->
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div>
         </article>
-
 				<?php endwhile; // End of the loop.
 				?>
-
 			</div>
       <div class="ui divider hidden"></div>
+			<div class="ui container">
+				<?php the_title( '<h2 class="ui horizontal divider header uppercase">Explore ', '</h2>' ); ?>
+			</div>
+			<div class="ui divider hidden"></div>
+			<div class="destination-row">
+        <?php
+        $posts = get_field('cities');
+        if( $posts ):
+        ?>
+        <div class="ui four column grid padded stackable">
+          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+          <?php setup_postdata($post); ?>
+            <div class="column">
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/andora.png" alt="">
+                <div class="span-wrap">
+                  <span><?php the_title(); ?></span>
+                </div>
+              </a>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <?php wp_reset_postdata(); endif; ?>
+      </div>
+
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

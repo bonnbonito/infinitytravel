@@ -85,3 +85,16 @@ function category_name_rest( $data, $post, $request ) {
 }
 
 add_filter( 'rest_prepare_post', 'category_name_rest', 10, 3 );
+
+function breadcrumbs_fx( $tax ) {
+
+	$terms = get_the_terms( get_the_ID(), $tax );
+
+	if ( $terms && ! is_wp_error( $terms ) ) :
+
+    foreach ( $terms as $term ) {
+        echo '<a href="'.get_term_link($term->term_id).'" class="section">'.$term->name.'</a>';
+    }
+
+	endif;
+}

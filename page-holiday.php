@@ -9,6 +9,11 @@
 
 get_header(); ?>
 
+	<div class="slide-banner">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
+	</div>
+
 	<div class="row-search">
 		<div class="ui middle aligned center aligned grid">
 			<div class="column">

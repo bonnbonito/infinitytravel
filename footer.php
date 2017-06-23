@@ -59,7 +59,7 @@
 </div><!-- #page -->
 
 <nav id="mobile-menu" class="mobile-menu" role="navigation">
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav><!-- #site-navigation -->
 
 <script type="text/javascript">
@@ -96,13 +96,6 @@
 
 		$(".menu-toggle").click(function() {
 			API.open();
-			$('.mm-panels>.mm-panel').niceScroll({
-				zindex : 999999,
-				cursorwidth : 10,
-				cursorborder : "1px solid #000",
-				cursoropacitymax : .7,
-				cursorminheight: 5
-			});
 		});
 	});
 </script>

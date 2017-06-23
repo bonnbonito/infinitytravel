@@ -8,28 +8,11 @@
  */
 
 get_header(); ?>
-
-	<div class="row-search">
-		<div class="ui middle aligned center aligned grid">
-			<div class="column">
-				<form class="ui form" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-					<div class="inline fields">
-						<div class="sixteen wide field">
-							<label for="s-hotels">Search</label>
-							<div class="ui fluid search">
-								<div class="ui icon input">
-									<input class="prompt" type="text" placeholder="Search Hotels" name="s" id="s-hotels">
-									<i class="search icon"></i>
-									<input type="submit" class="s-submit">
-								</div>
-								<div class="results"></div>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
+	<div class="slide-banner">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
 	</div>
+	<?php get_template_part( 'template-parts/row', 'search' ); ?>
 
 	<div id="primary" class="content-area front-area">
 		<main id="main" class="site-main" role="main">

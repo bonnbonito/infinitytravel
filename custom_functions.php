@@ -56,3 +56,32 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
+
+function featured_image_rest( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$_data['fi_full'] = get_the_post_thumbnail_url( $post->ID, 'full' );
+	$data->data = $_data;
+	return $data;
+
+}
+
+add_filter( 'rest_prepare_post', 'featured_image_rest', 10, 3 );
+
+function category_name_rest( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$categories = get_the_category();
+	$cat = array();
+	foreach( $categories as $category ) {
+  	$cat[] = $category->name;
+	}
+
+	$_data['category_names'] = $cat;
+	$data->data = $_data;
+	return $data;
+
+}
+
+add_filter( 'rest_prepare_post', 'category_name_rest', 10, 3 );

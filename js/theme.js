@@ -71,8 +71,12 @@ jQuery(document).ready(function($) {
 	$('.slide-banner').slick({
 	  autoplay: true,
 	  autoplaySpeed: 2000,
+		arrows: false,
+		dots: false,
 	  fade: true,
 	  cssEase: 'linear'
 	});
+
+	$('.ui.checkbox').checkbox();
 
 });

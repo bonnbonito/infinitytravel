@@ -97,10 +97,4 @@
 
 	<?php get_template_part('template-parts/header', 'megamenu'); ?>
 
-	<div id="content" class="site-content">
-		<?php if (!is_page('testimonials')): ?>
-			<div class="slide-banner">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home.jpg" alt="">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/s2.jpg" alt="">
-			</div>
-		<?php endif; ?>
+	<div id="content" class="site-content">	

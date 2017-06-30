@@ -40,7 +40,7 @@
 					<span class="bottom-bar"></span>
 				</a>
 			</div>
-			<div class="thirteen wide computer sixteen wide tablet column pb0">
+			<div class="thirteen wide computer sixteen wide tablet column pb0 mobile-hidden">
 				<div class="item">
 				<div class="top-right">
 					<div class="ui horizontal list">
@@ -97,4 +97,4 @@
 
 	<?php get_template_part('template-parts/header', 'megamenu'); ?>
 
-	<div id="content" class="site-content">	
+	<div id="content" class="site-content">

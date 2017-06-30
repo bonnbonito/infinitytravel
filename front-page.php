@@ -33,66 +33,58 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<div class="destination-row">
+		<?php if( have_rows('two_blocks') ): ?>
 		<div class="ui two column grid padded stackable">
+			<?php while ( have_rows('two_blocks') ) : the_row(); ?>
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
+				<a href="<?php the_sub_field('link'); ?>">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_sub_field('title'); ?></span>
 					</div>
 				</a>
 			</div>
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
-					<div class="span-wrap">
-						<span>Resort of the Month</span>
-					</div>
-				</a>
-			</div>
+		<?php endwhile; ?>
 		</div>
+	<?php endif; ?>
 		<div class="ui three column grid padded stackable">
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/when.jpg" alt="">
+				<a href="<?php the_field('first_block_link'); ?>">
+					<img src="<?php echo get_field('first_block_image')['url']; ?>" alt="<?php echo get_field('first_block_image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_field('first_block_title'); ?></span>
 					</div>
 				</a>
 			</div>
 			<div class="column mid-logo" style="background-color: #434d4b;">
 				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mid-logo.png" alt="">
-					<p>Why book with<br>Infinity&Beyond Travel?</p>
+					<img src="<?php echo get_field('middle_block_image')['url']; ?>" alt="<?php echo get_field('middle_block_image')['alt']; ?>">
+					<p><?php the_field('middle_block_title'); ?></p>
 				</a>
 			</div>
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/inspire.jpg" alt="">
+				<a href="<?php the_field('last_block_link'); ?>">
+					<img src="<?php echo get_field('last_block_image')['url']; ?>" alt="<?php echo get_field('last_block_image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_field('last_block_title'); ?></span>
 					</div>
 				</a>
 			</div>
 		</div>
+		<?php if( have_rows('bottom_two_blocks') ): ?>
 		<div class="ui two column grid padded stackable">
+			<?php while ( have_rows('bottom_two_blocks') ) : the_row(); ?>
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
+				<a href="<?php the_sub_field('link'); ?>">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_sub_field('title'); ?></span>
 					</div>
 				</a>
 			</div>
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
-					<div class="span-wrap">
-						<span>Resort of the Month</span>
-					</div>
-				</a>
-			</div>
+		<?php endwhile; ?>
 		</div>
+	<?php endif; ?>
 	</div>
 
 <?php

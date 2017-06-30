@@ -43,9 +43,8 @@ function bonnjoel_addmore_scripts() {
 	wp_localize_script( 'bonnjoel_theme-js', 'URL', array(
 			'ajaxurl' => admin_url('admin-ajax.php'),
 			'api_nonce' => wp_create_nonce( 'wp_rest' ),
-            'api_url'   => site_url('/wp-json/wp/v2/')
+      'api_url'   => site_url('/wp-json/wp/v2/')
 		) );
-
 }
 
 add_action( 'wp_enqueue_scripts', 'bonnjoel_addmore_scripts' );
@@ -96,5 +95,171 @@ function breadcrumbs_fx( $tax ) {
         echo '<a href="'.get_term_link($term->term_id).'" class="section">'.$term->name.'</a>';
     }
 
+	else:
+		echo '<a class="section" style="color: red;">No '.$tax.'</a>';
 	endif;
+}
+
+function get_city_name() {
+	$terms = get_the_terms( get_the_ID(), 'city' );
+
+	if ( $terms && ! is_wp_error( $terms ) ) :
+
+    foreach ( $terms as $term ) {
+        return $term->name;
+    }
+
+	endif;
+}
+
+function continent_name_rest( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$categories = get_the_terms( $post->ID, 'continent' );
+	$cat = array();
+	foreach( $categories as $category ) {
+  	$cat[] = $category->name;
+	}
+
+	if ($cat) {
+		$_data['continent_name'] = $cat;
+	} else {
+		$_date['continent_name'] = 'None';
+	}
+
+	$data->data = $_data;
+	return $data;
+
+}
+
+function city_name_rest( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$categories = get_the_terms( $post->ID, 'city' );
+
+	$cat = array();
+	foreach( $categories as $category ) {
+  	$cat[] = $category->name;
+	}
+
+	if ($cat) {
+		$_data['city_name'] = $cat;
+	} else {
+		$_date['city_name'] = 'None';
+	}
+
+	$data->data = $_data;
+	return $data;
+
+}
+
+function country_name_rest( $data, $post, $request ) {
+
+	$_data = $data->data;
+	$categories = get_the_terms( $post->ID, 'country' );
+	$cat = array();
+	if ($categories) {
+		foreach( $categories as $category ) {
+	  	$cat[] = $category->name;
+		}
+	}
+
+	if ($cat) {
+		$_data['country_name'] = $cat;
+	} else {
+		$_date['country_name'] = 'None';
+	}
+
+	$data->data = $_data;
+	return $data;
+
+}
+
+add_filter( 'rest_prepare_hotel', 'country_name_rest', 10, 3 );
+add_filter( 'rest_prepare_hotel', 'city_name_rest', 10, 3 );
+add_filter( 'rest_prepare_hotel', 'continent_name_rest', 10, 3 );
+add_filter( 'rest_prepare_city', 'country_name_rest', 10, 3 );
+add_filter( 'rest_prepare_city', 'continent_name_rest', 10, 3 );
+add_filter( 'rest_prepare_country', 'continent_name_rest', 10, 3 );
+
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'wp/v2', '/hotel/country/(?P<country>\S+)', array(
+    'methods' => 'GET',
+    'callback' => 'get_post_countries',
+  ) );
+} );
+
+function get_post_countries( $data ) {
+  $posts = get_posts( array(
+		'post_type' => 'hotel',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'country',
+				'field' => 'slug',
+				'terms' => $data['country'],
+				'operator' => 'IN',
+			)
+		)
+  ));
+
+  if ( empty( $posts ) ) {
+    return null;
+  }
+
+	$add_featured_image = function( $post ) {
+    $image_id = get_post_thumbnail_id( $post );
+    $post->thumbnail = wp_get_attachment_url( $image_id, 'full' );
+    return $post;
+	};
+
+	$posts = array_map( $add_featured_image, $posts );
+
+  return $posts;
+}
+
+add_action( 'wp_ajax_search_hotels', 'search_hotels' );
+add_action( 'wp_ajax_nopriv_search_hotels', 'search_hotels' );
+
+function search_hotels() {
+
+	$args = array(
+		'post_type' => 'hotel'
+	);
+
+	if (!empty($_POST['from'])) {
+		$args['tax_query'][] = array(
+			'taxonomy' => 'continent',
+			'field'	=>	'slug',
+			'terms'	=> $_POST['from']
+		);
+	}
+
+	$args['meta_query'] = array( 'relation'=>'AND' );
+
+	if (!empty($_POST['bedrooms'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'bedrooms',
+			'value'	  	=> $_POST['bedrooms'],
+			'compare' 	=> '=',
+			);
+	}
+
+	$query = new WP_Query( $args );
+
+	if ( $query->have_posts() ) : ?>
+	<div class="ui cards hotel-results-grid">
+	<?php while ( $query->have_posts() ) : $query->the_post();
+		get_template_part( 'template-parts/content', 'hotel-card' );
+	endwhile; ?>
+</div>
+<?php else: ?>
+	<div class="hotel-results-grid">
+	<div class="ui tertiary inverted red segment center aligned">
+		<p><i class="warning sign icon"></i> No hotels found...</p>
+	</div>
+</div>
+<?php
+	endif;
+	die();
 }

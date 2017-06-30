@@ -33,32 +33,20 @@ get_header(); ?>
 			</div>
 
       <div class="destination-row">
-        <div class="ui three column grid padded stackable">
-    			<div class="column">
-    				<a href="#">
-    					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/when.jpg" alt="">
-    					<div class="span-wrap">
-    						<span>Destination of the Month</span>
-    					</div>
-    				</a>
-    			</div>
-          <div class="column">
-    				<a href="#">
-    					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/inspire.jpg" alt="">
-    					<div class="span-wrap">
-    						<span>Destination of the Month</span>
-    					</div>
-    				</a>
-    			</div>
-    			<div class="column">
-    				<a href="#">
-    					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/inspire.jpg" alt="">
-    					<div class="span-wrap">
-    						<span>Destination of the Month</span>
-    					</div>
-    				</a>
-    			</div>
-    		</div>
+				<?php if( have_rows('three_box_content') ): ?>
+				<div class="ui three column grid padded stackable">
+					<?php while ( have_rows('three_box_content') ) : the_row(); ?>
+					<div class="column">
+						<a href="<?php the_sub_field('link'); ?>">
+							<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
+							<div class="span-wrap">
+								<span><?php the_sub_field('title'); ?></span>
+							</div>
+						</a>
+					</div>
+				<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
       </div>
 
 		</main><!-- #main -->

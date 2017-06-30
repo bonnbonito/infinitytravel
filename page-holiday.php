@@ -16,28 +16,6 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/row', 'search' ); ?>
 
-	<div class="row-search">
-		<div class="ui middle aligned center aligned grid">
-			<div class="column">
-				<form class="ui form" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-					<div class="inline fields">
-						<div class="sixteen wide field">
-							<label for="s-hotels">Search</label>
-							<div class="ui fluid search">
-								<div class="ui icon input">
-									<input class="prompt" type="text" placeholder="Search Hotels" name="s" id="s-hotels">
-									<i class="search icon"></i>
-									<input type="submit" class="s-submit">
-								</div>
-								<div class="results"></div>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
 	<div id="primary" class="content-area front-area">
 		<main id="main" class="site-main" role="main">
 
@@ -57,66 +35,34 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	<div class="destination-row">
+		<?php if( have_rows('two_box_content') ): ?>
 		<div class="ui two column grid padded stackable">
+			<?php while ( have_rows('two_box_content') ) : the_row(); ?>
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
+				<a href="<?php the_sub_field('link'); ?>">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_sub_field('title'); ?></span>
 					</div>
 				</a>
 			</div>
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
-					<div class="span-wrap">
-						<span>Resort of the Month</span>
-					</div>
-				</a>
-			</div>
+		<?php endwhile; ?>
 		</div>
+	<?php endif; ?>
+		<?php if( have_rows('three_box_content') ): ?>
 		<div class="ui three column grid padded stackable">
+			<?php while ( have_rows('three_box_content') ) : the_row(); ?>
 			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/when.jpg" alt="">
+				<a href="<?php the_sub_field('link'); ?>">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
 					<div class="span-wrap">
-						<span>Destination of the Month</span>
+						<span><?php the_sub_field('title'); ?></span>
 					</div>
 				</a>
 			</div>
-			<div class="column mid-logo" style="background-color: #434d4b;">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mid-logo.png" alt="">
-					<p>Why book with<br>Infinity&Beyond Travel?</p>
-				</a>
-			</div>
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/inspire.jpg" alt="">
-					<div class="span-wrap">
-						<span>Destination of the Month</span>
-					</div>
-				</a>
-			</div>
+		<?php endwhile; ?>
 		</div>
-		<div class="ui two column grid padded stackable">
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel.jpg" alt="">
-					<div class="span-wrap">
-						<span>Destination of the Month</span>
-					</div>
-				</a>
-			</div>
-			<div class="column">
-				<a href="#">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/travel2.jpg" alt="">
-					<div class="span-wrap">
-						<span>Resort of the Month</span>
-					</div>
-				</a>
-			</div>
-		</div>
+	<?php endif; ?>
 	</div>
 
 <?php

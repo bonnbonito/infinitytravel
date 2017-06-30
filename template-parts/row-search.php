@@ -1,6 +1,6 @@
 <div class="row-search">
-  <div class="ui middle aligned center aligned grid">
-    <div class="column">
+  <div class="ui middle aligned center aligned grid padded">
+    <div class="column left aligned">
       <form class="ui form" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
         <div class="inline fields">
           <div class="sixteen wide field">

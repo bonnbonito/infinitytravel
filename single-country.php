@@ -28,7 +28,7 @@ get_header(); ?>
 					  <div class="section"><?php the_title(); ?></div>
 					</div>
         </div>
-        <div class="right item">
+        <div class="right item hide-md">
           <a class="ui button"><i class="phone icon"></i> CALL BACK</a>
         </div>
       </div>

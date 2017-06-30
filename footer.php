@@ -68,36 +68,48 @@
 			FastClick.attach(document.body);
 		});
 
-		$("#mobile-menu").mmenu({
-			"extensions": [
-			"pagedim-black",
-			"theme-dark"
-			],
-			"navbar": {
-				"add": true
-			},
-			"navbars": [
-			{
-				"position": "top"
+		$('#mobile-menu').mmenu({
 
+			'extensions': [
+			'pagedim-black',
+			'theme-dark'
+			],
+			'searchfield': {
+          'resultsPanel': true
+      },
+			'navbar': {
+				'add': true
 			},
+			'navbars': [
 			{
-				"position": "bottom",
+				'position': 'top',
 				"content": [
-				"<a class='fa fa-facebook' href='#/' title='Follow Our Facebook'></a>",
-				"<a class='fa fa-twitter' href='#/' title='Follow Our Twitter'></a>",
-				"<a class='fa fa-instagram' href='#/' title='Follow Our Instagram'></a>"
+      		"searchfield"
+        ]
+			},
+
+			{
+				'position': 'bottom',
+				'content': [
+				'<a href="tel:+01244 355347" title="Call Us"><i class="phone icon"></i>Call Us</a>',
+				'<a href="mailto:sales@iabtravel.com" title="Mail Us"><i class="envelope icon"></i> Email Us</a>',
 				]
 			}
-			]
-		});
+		]
+	},{
+		 "searchfield": {
+				"clear": true
+		 }
+	});
 
 		var API = $("#mobile-menu").data( "mmenu" );
 
 		$(".menu-toggle").click(function() {
 			API.open();
 		});
+
 	});
+
 </script>
 
 <?php wp_footer(); ?>

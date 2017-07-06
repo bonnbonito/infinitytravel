@@ -181,7 +181,7 @@
 <div class="ui divider hidden"></div>
 <div class="ui divider hidden"></div>
 
-<div class="ui horizontal divider">
+<div class="ui horizontal divider search-head">
   <h3>Hotels Search Result</h3>
 </div>
 

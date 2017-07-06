@@ -63,8 +63,8 @@ get_header(); ?>
 
 			<div class="ui container">
 				<div class="ui cards hotel-results-grid">
-					<a class="ui card" href="http://localhost:4567/infinity/hotel/the-almyra-paphos/">						
-						<div class="hotel-item" style="background-image: url(&quot;http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png&quot;);">
+					<a class="ui card" href="http://localhost:4567/infinity/hotel/the-almyra-paphos/">
+						<div class="hotel-item" style="background-image: url(http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png);">
 							<div class="hotel-info">
 								<p class="hotel-name">The Almyra Paphos The Almyra Paphos</p>
 								<p class="hotel-loc">Asimina Suites, Cyprus</p>
@@ -81,7 +81,7 @@ get_header(); ?>
 						</div>
 					</a>
 					<a class="ui card" href="http://localhost:4567/infinity/hotel/london-hotel/">
-						<div class="hotel-item" style="background-image: url(&quot;http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png&quot;);">
+						<div class="hotel-item" style="background-image: url(http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png);">
 							<div class="hotel-info">
 								<p class="hotel-name">London Hotel</p>
 								<p class="hotel-loc">Asimina Suites, Cyprus</p>
@@ -98,7 +98,7 @@ get_header(); ?>
 						</div>
 					</a>
 					<a class="ui card" href="http://localhost:4567/infinity/hotel/sample-hotel/">
-						<div class="hotel-item" style="background-image: url(&quot;http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png&quot;);">
+						<div class="hotel-item" style="background-image: url(http://localhost:4567/infinity/wp-content/themes/infinitytravel/img/h1.png);">
 							<div class="hotel-info">
 								<p class="hotel-name">Sample Hotel</p>
 								<p class="hotel-loc">Asimina Suites, Cyprus</p>

@@ -237,10 +237,90 @@ function search_hotels() {
 
 	$args['meta_query'] = array( 'relation'=>'AND' );
 
-	if (!empty($_POST['bedrooms'])) {
+	if (!empty($_POST['indoor_pool'])) {
 		$args['meta_query'][] = array(
-			'key'	 	=> 'bedrooms',
-			'value'	  	=> $_POST['bedrooms'],
+			'key'	 	=> 'indoor_pool',
+			'value'	  	=> $_POST['indoor_pool'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['spa'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'spa',
+			'value'	  	=> $_POST['spa'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['gym'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'gym',
+			'value'	  	=> $_POST['gym'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['golf'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'golf',
+			'value'	  	=> $_POST['golf'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['watersports'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'watersports',
+			'value'	  	=> $_POST['watersports'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['creche'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'creche',
+			'value'	  	=> $_POST['creche'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['kids_club'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'kids_club',
+			'value'	  	=> $_POST['kids_club'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['teen_club'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'teen_club',
+			'value'	  	=> $_POST['teen_club'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['interconnecting_rooms'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'interconnecting_rooms',
+			'value'	  	=> $_POST['interconnecting_rooms'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['less_70_rooms'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'less_70_rooms',
+			'value'	  	=> $_POST['less_70_rooms'],
+			'compare' 	=> '=',
+			);
+	}
+
+	if (!empty($_POST['direct_beach_access'])) {
+		$args['meta_query'][] = array(
+			'key'	 	=> 'direct_beach_access',
+			'value'	  	=> $_POST['direct_beach_access'],
 			'compare' 	=> '=',
 			);
 	}

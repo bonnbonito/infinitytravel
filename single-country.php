@@ -61,13 +61,22 @@ get_header(); ?>
 			<div class="ui divider hidden"></div>
 			<div class="destination-row">
         <?php
-        $posts = get_field('cities');
-        if( $posts ):
-        ?>
-        <div class="ui four column grid padded stackable">
-          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-          <?php setup_postdata($post); ?>
-            <div class="column">
+				global $post;
+				$args = array(
+					'post_type' => 'city',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'country',
+							'field'		 => 'slug',
+							'terms'		=> $post->post_name
+						)
+					)
+				);
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) : ?>
+					<div class="ui four column grid padded stackable">
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+						<div class="column">
               <a href="<?php the_permalink(); ?>">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/andora.png" alt="">
                 <div class="span-wrap">
@@ -75,9 +84,14 @@ get_header(); ?>
                 </div>
               </a>
             </div>
-          <?php endforeach; ?>
-        </div>
-        <?php wp_reset_postdata(); endif; ?>
+					<?php endwhile; ?>
+					</div>
+				<?php else: ?>
+					<div class="ui warning message container">
+					  <i class="warning icon"></i>
+					  No Countries added
+					</div>
+				<?php endif; ?>
       </div>
 
 

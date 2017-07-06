@@ -534,6 +534,7 @@ h1, h2, h3, h4 {
 .otherhotel-slide .hotel-item .hotel-info {
   top: 50%;
   transform: translateY(-50%);
+  position: absolute;
 }
 
 .hotel-item .hotel-info {
@@ -758,6 +759,10 @@ h1, h2, h3, h4 {
 
 .mm-clear.mm-clear:before, .mm-close.mm-close:before {
   right: 19px;
+}
+
+.search-head h3 {
+  display: none;
 }
 
 @media (min-width: 768px) {

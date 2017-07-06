@@ -140,6 +140,7 @@ jQuery(document).ready(function($) {
 
   $('.inspire-form').on('submit', function(event) {
     event.preventDefault();
+    $('.search-head h3').show();
     $('.hotel-results-grid').prepend('<div class="ui active dimmer"><div class="ui text loader">Loading</div></div>');
     $('.submit-btn-search').html('SEARCHING <i class="loading spinner icon"></i>');
 
